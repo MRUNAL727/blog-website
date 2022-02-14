@@ -4,14 +4,12 @@
   "description": "",
   "main": "index.js",
   "engines": {
-    "node":"16.0.0",
+    "node": "16.0.0",
     "npm": "7.24.1"
   },
-  
   "scripts": {
     "start": "node index.js",
-    "heroku-postbuild":"npm run build"
-
+    "heroku-postbuild": "npm run build"
   },
   "keywords": [],
   "author": "",

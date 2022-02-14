@@ -57,6 +57,7 @@ const storage = multer.diskStorage({
     res.status(200).json("File has been uploaded");
   });
 
+ __dirname = path.resolve() 
   if(process.env.NODE_ENV= 'production'){
     app.use(express.static("client/build"))
   }
