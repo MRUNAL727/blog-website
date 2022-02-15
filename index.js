@@ -19,7 +19,7 @@ var corsOptions = {
 app.use(cors(corsOptions))
 
 
-
+__dirname = path.resolve()
 dotenv.config();
 app.use(express.json())
 app.use(express.urlencoded({extended: true}))
@@ -43,6 +43,9 @@ app.use("/api/users", userRoute);
 app.use("/api/posts", postRoute);
 app.use("/api/categories", categoryRoute);
 
+// app.get("*", (req,res)=>{
+//   res.sendFile(path.resolve(__dirname, 'client', "build", 'index.html'))
+// })
 const storage = multer.diskStorage({
     destination: (req, file, cb) => {
       cb(null, "images");
@@ -57,7 +60,7 @@ const storage = multer.diskStorage({
     res.status(200).json("File has been uploaded");
   });
 
- __dirname = path.resolve() 
+  
   if(process.env.NODE_ENV= 'production'){
     app.use(express.static("client/build"))
   }
