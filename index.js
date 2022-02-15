@@ -64,8 +64,8 @@ const storage = multer.diskStorage({
     app.use(express.static("client/build"))
   }
 
-  app.get('/', (req, res)=>{
-    res.send('Hello')
-  })
+  // app.get('/', (req, res)=>{
+  //   res.send('Hello')
+  // })
 
 app.listen(PORT, console.log('Running on port 5000')); 
