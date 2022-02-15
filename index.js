@@ -18,9 +18,8 @@ var corsOptions = {
 
 app.use(cors(corsOptions))
 
-
+require("dotenv").config();
 __dirname = path.resolve()
-config(dotenv);
 app.use(express.json())
 app.use(express.urlencoded({extended: true}))
 app.use("/images", express.static(path.join(__dirname, "/images")));
