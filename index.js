@@ -27,7 +27,7 @@ app.use("/images", express.static(path.join(__dirname, "/images")));
 
 const PORT = process.env.PORT|| 5000;
 
-const connection_url = process.env.MONGO_URL
+const connection_url = 'mongodb+srv://mrunal:mrunal@cluster0.jwu7l.mongodb.net/BLOG-WEBSITE?retryWrites=true&w=majority'
 
 mongoose.connect(connection_url, {  
     useNewUrlParser: true,
