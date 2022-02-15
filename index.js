@@ -43,7 +43,7 @@ app.use("/api/posts", postRoute);
 app.use("/api/categories", categoryRoute);
 
 // app.get("*", (req,res)=>{
-//   res.sendFile(path.resolve(__dirname, 'client', "public", 'index.html'))
+  res.sendFile(path.resolve(__dirname, 'client', "build"))
 // })
 const storage = multer.diskStorage({
     destination: (req, file, cb) => {
@@ -60,9 +60,9 @@ const storage = multer.diskStorage({
   });
 
   
-  if(process.env.NODE_ENV= 'production'){
-    app.use(express.static("client/build"))
-  }
+  // if(process.env.NODE_ENV= 'production'){
+  //   app.use(express.static("client/build"))
+  // }
 
   // app.get('/', (req, res)=>{
   //   res.send('Hello')
