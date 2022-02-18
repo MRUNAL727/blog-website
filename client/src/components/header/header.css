@@ -29,3 +29,16 @@
     margin-top: 80px;
     object-fit: cover;
   }
+
+  .head{
+    background-color: black;
+    height: 300px;
+    width: 80%;
+    margin: auto;
+  }
+
+  .helloWorld{
+    color: green;
+    text-align: center;
+    padding-top: 100px;
+  }
