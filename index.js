@@ -10,13 +10,13 @@ const multer = require("multer");
 const path = require("path");
 const cors = require('cors')
 
-// var corsOptions = {
-//     origin: '*',
-//     optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
-//     methods: "GET, PUT, POST, DELETE"
-//   }
+var corsOptions = {
+    origin: '*',
+    optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
+    methods: "GET, PUT, POST, DELETE"
+  }
 
-app.use(cors())
+app.use(cors(corsOptions))
 
 require("dotenv").config();
 __dirname = path.resolve()
