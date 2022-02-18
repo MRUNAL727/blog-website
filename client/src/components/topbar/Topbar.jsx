@@ -7,7 +7,7 @@ import "./topbar.css";
 export default function TopBar() {
   const navigate = useNavigate()
   const { user, dispatch } = useContext(Context);
-  const PF = "http://localhost:5000/images/"
+  const PF = "/images/"
 
   const handleLogout = () => {
     dispatch({ type: "LOGOUT" });
