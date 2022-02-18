@@ -8,10 +8,8 @@ router.post("/", async (req, res) => {
   const newPost = new Post(req.body);
   try {
     const savedPost = await newPost.save();
-    res.setHeader('Access-Control-Allow-Origin', '*');
     res.status(200).json(savedPost);
   } catch (err) {
-    // res.setHeader('Access-Control-Allow-Origin', '*');
     res.status(500).json(err);
   }
 });
