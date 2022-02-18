@@ -26,11 +26,11 @@ export default function Write() {
       data.append("file", file);
       newPost.photo = filename;
       try {
-        await axios.post("http://localhost:5000/api/upload", data );
+        await axios.post("/api/upload", data );
       } catch (err) {}
     }
     try {
-      const res = await axios.post("http://localhost:5000/api/posts", newPost);
+      const res = await axios.post("/api/posts", newPost);
       window.location.replace("/post/" + res.data._id);
     } catch (err) {}
   };
