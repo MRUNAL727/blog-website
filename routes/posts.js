@@ -77,16 +77,17 @@ router.get("/", async (req, res) => {
     let posts;
     if (username) {
       posts = await Post.find({ username });
-    } else if (catName) {
-      posts = await Post.find({
-        categories: {
-          $in: [catName],
-        },
-      });
-    } else {
+    // } else if (catName) {
+    //   posts = await Post.find({
+    //     categories: {
+    //       $in: [catName],
+    //     },
+    //   });
+    // } else {
       posts = await Post.find();
     }
     // res.setHeader('Access-Control-Allow-Origin', '*')
+    console.log(posts)
     res.status(200).json(posts);
 
   } catch (err) {
