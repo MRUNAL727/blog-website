@@ -71,7 +71,9 @@ router.get("/:id", async (req, res) => {
 //GET ALL POSTS
 router.get("/", async (req, res) => {
   const username = req.query.user;
+  console.log(username)
   const catName = req.query.cat;
+  console.log("hey there")
 
   try {
     let posts;
@@ -83,7 +85,7 @@ router.get("/", async (req, res) => {
     //       $in: [catName],
     //     },
     //   });
-    // } else {
+    } else {
       posts = await Post.find();
     }
     // res.setHeader('Access-Control-Allow-Origin', '*')
