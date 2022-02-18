@@ -41,9 +41,7 @@ app.use("/api/users", userRoute);
 app.use("/api/posts", postRoute);
 app.use("/api/categories", categoryRoute);
 
-// app.get("*", (req,res)=>{
-  // res.sendFile(path.resolve(__dirname, 'client', "build"))
-// })
+
 const storage = multer.diskStorage({
     destination: (req, file, cb) => {
       cb(null, "images");
