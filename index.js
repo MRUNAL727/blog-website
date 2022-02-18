@@ -32,7 +32,7 @@ const connection_url = process.env.MONGO_URL
 mongoose.connect(connection_url, {  
     useNewUrlParser: true,
     useUnifiedTopology: true}).then(
-    console.log('Database connected').catch((err)=>console.log(err))
+    console.log('Database connected')
 )
 
 // app.options('*', cors()) 
