@@ -11,7 +11,7 @@ const path = require("path");
 const cors = require('cors')
 
 var corsOptions = {
-    origin: 'https://asdjbaksjdbkab.herokuapp.com/',
+    origin: 'https://asdjbaksjdbkab.herokuapp.com',
     optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
     methods: "GET, PUT, POST, DELETE"
   }
