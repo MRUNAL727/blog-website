@@ -86,7 +86,7 @@ router.get("/", async (req, res) => {
     } else {
       posts = await Post.find();
     }
-    res.setHeader('Access-Control-Allow-Origin', '*')
+    // res.setHeader('Access-Control-Allow-Origin', '*')
     res.status(200).json(posts);
 
   } catch (err) {
