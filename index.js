@@ -11,7 +11,7 @@ const path = require("path");
 const cors = require('cors')
 
 var corsOptions = {
-    origin: 'http://localhost:3000',
+    origin: '*',
     optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
     methods: "GET, PUT, POST, DELETE"
   }
@@ -27,13 +27,12 @@ app.use("/images", express.static(path.join(__dirname, "/images")));
 
 const PORT = process.env.PORT|| 5000;
 
-const connection_url = "mongodb+srv://mrunal:mrunal@cluster0.jwu7l.mongodb.net/BLOG-WEBSITE?retryWrites=true&w=majority"
+const connection_url = process.env.MONGO_URL
 
 mongoose.connect(connection_url, {  
     useNewUrlParser: true,
-    // useFindAndModify: false,
     useUnifiedTopology: true}).then(
-    console.log('Database connected')
+    console.log('Database connected').catch((err)=>console.log(err))
 )
 
 // app.options('*', cors()) 
