@@ -11,12 +11,13 @@ const path = require("path");
 const cors = require('cors')
 
 var corsOptions = {
-    origin: 'https://asdjbaksjdbkab.herokuapp.com',
+    // origin: 'https://asdjbaksjdbkab.herokuapp.com',
+    origin:"http://localhost:3000",
     optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
     methods: "GET, PUT, POST, DELETE"
   }
 
-app.use(cors(corsOptions))
+app.use(cors(corsOptions)) 
 
 require("dotenv").config();
 __dirname = path.resolve()
@@ -44,7 +45,7 @@ app.use("/api/categories", categoryRoute);
 
 const storage = multer.diskStorage({
     destination: (req, file, cb) => {
-      cb(null, "./images");
+      cb(null, './client/images' );
     },
     filename: (req, file, cb) => {
       cb(null, req.body.name);

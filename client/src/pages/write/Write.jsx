@@ -2,6 +2,10 @@ import { useContext, useState } from "react";
 import "./write.css";
 import axios from "axios";
 import { Context } from "../../context/Context";
+import EditorContainer from "./EdiorConatiner";
+// import '../node_modules/react-draft-wysiwyg/dist/react-draft-wysiwyg.css';
+import '../../../node_modules/react-draft-wysiwyg/dist/react-draft-wysiwyg.css'
+
 
 export default function Write() {
   const [title, setTitle] = useState("");
@@ -17,6 +21,7 @@ export default function Write() {
       desc,
     };
 
+    
    
     
     if (file) {
@@ -30,13 +35,13 @@ export default function Write() {
       } catch (err) {}
     }
     try {
-      const res = await axios.post("/api/posts", newPost);
+      const res = await axios.post("http://localhost:5000/api/posts", newPost);
       window.location.replace("/post/" + res.data._id);
     } catch (err) {}
   };
   return (
     <div className="write">
-      {file && (
+      {/* {file && (
         <img className="writeImg" src={URL.createObjectURL(file)} alt="" />
       )}
       <form className="writeForm" onSubmit={handleSubmit}>
@@ -65,11 +70,13 @@ export default function Write() {
             className="writeInput writeText"
             onChange={e=>setDesc(e.target.value)}
           ></textarea>
-        </div>
-        <button className="writeSubmit" type="submit">
+        </div> */}
+    <EditorContainer style={{width: '40%', border:'1px solid black', display:'block'}}/>
+       
+       <button className="writeSubmit" type="submit" style={{ display:'block', marginTop:50}}>
           Publish
         </button>
-      </form>
+      {/* </form> */}
     </div>
   );
 }

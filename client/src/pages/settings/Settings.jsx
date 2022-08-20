@@ -30,7 +30,7 @@ export default function Settings() {
       data.append("file", file);
       updatedUser.profilePic = filename;
       try {
-        await axios.post("/api/upload", data);
+        await axios.post("http://localhost:5000/api/upload", data);
       } catch (err) {}
     }
     try {
